@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <Version>0.1.0</Version>
+    <Authors>Technology Solutions Associates</Authors>
+    <Copyright>Copyright © 2020 Technology Solutions Associates</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Techsola/StructuredProgress</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Techsola/StructuredProgress</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>progress report IProgress percent fraction remaining message status hierarchy sub task helper automatic thread-safe</PackageTags>
+    <Description>Idiomatic System.IProgress-based progress reporting with a structured exchange type. Automatic percentage calculations, optional subtask hierarchy, thread-safe.</Description>
+
+    <RootNamespace>Techsola</RootNamespace>
+    <WarningsAsErrors Condition="'$(BuildingInsideVisualStudio)' != 'true'">true</WarningsAsErrors>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\StructuredProgress.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EmbedAllSources>true</EmbedAllSources>
+
+    <!-- Include symbol files (*.pdb) in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetAnalyzers.DocumentationAnalyzers" Version="1.0.0-beta.59" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha" PrivateAssets="all" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApiContractGenerator.MSBuild" Version="1.0.0" PrivateAssets="all" />
+    <ApiContractAssembly Include="$(TargetPath)" />
+  </ItemGroup>
+
+</Project>
